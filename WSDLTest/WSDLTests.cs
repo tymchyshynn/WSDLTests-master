@@ -86,6 +86,7 @@ namespace WSDLTest
         [TestCase(Country.Canada, "", 2017, "holiday code provided was invalid"), Timeout(TestTimeout)]
         [TestCase(Country.Canada, "FLAG-DAY", 1699, "The year provided was invalid")]
         [TestCase(null, "FLAG-DAY", 2017, "The year provided was invalid")]
+        [Ignore("skip")]
         public void GetHolidayDateE(Country country, string holidayCode, int year, string exceptionMessage)
         {
             try
@@ -106,6 +107,7 @@ namespace WSDLTest
         /// <param name="starTime"></param>
         /// <param name="endTime"></param>
         [TestCaseSource(typeof(DataSource), nameof(DataSource.GetHolidaysForDateRangeE)), Timeout(TestTimeout)]
+        [Ignore ("skip")]
         public void GetHolidaysForDateRangeE(Country country, DateTime starTime, DateTime endTime)
         {
             try
